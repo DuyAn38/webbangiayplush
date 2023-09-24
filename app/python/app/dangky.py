@@ -27,7 +27,7 @@ def dangky(request):
         from_register = CreateUserForm(request.POST)
         if from_register.is_valid(): # kiểm tra đúng yêu cầu thì lưu cái form đó lại
             from_register.save()
-            return redirect('login')
+            return redirect('dangnhap')
     return render(request, "app/dangky.html", context)
 
 
