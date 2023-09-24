@@ -16,8 +16,6 @@ def timkiem(request):
         print('not admin')
         show_manage = 'none'
 
-
-
     if request.user.is_authenticated: # neu da xac thuc
         user_not_login = "none"
         user_login = "show"
@@ -25,19 +23,23 @@ def timkiem(request):
         user_not_login = "show"
         user_login = "none"
 
+    print("abcxyz")
     if request.method == "POST":
-        search = request.POST["searched"]
-        keys = Product.objects.filter(name__contains=search)
-        if request.user.is_authenticated:
-            customer = request.user
+        print("vao day")
+        key = request.POST["searched"]
+        print(key)
+        product_rq = Product.objects.filter(name__contains=key)
+        print(product_rq)
+        
 
     return render(request, "app/timkiem.html",
                   {'categories': categories,
                    'user_login': user_login,
                    'user_not_login': user_not_login,
-                   "search": search,
-                   "keys": keys,
+                   'product_rq': product_rq,
+                   'key': key,
                    'slide_hidden': slide_hidden,
                    'fixed_height': fixed_height,
                    'show_manage': show_manage,
-                   })
+                   }
+                   )

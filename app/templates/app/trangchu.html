@@ -149,7 +149,53 @@
         </div>
     </div>
     
+    <div class="container">
+        <div class="row justify-content-center">
+            <ul class="d-flex">
+                {% if page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; Trang đầu</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page.previous_page_number }}">Trang trước</a></li>
+                {% endif %}
     
+                {% for num in page.paginator.page_range %}
+                    <li class="page-item {% if num == page.number %}active{% endif %}">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                {% endfor %}
+    
+                {% if page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page.next_page_number }}">Trang sau</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page.paginator.num_pages }}">Trang cuối &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .page-item {
+        margin: 0 5px;
+    }
+
+    .page-item.active a {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .page-link {
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        color: #007bff;
+    }
+</style>
+
+
 
     <section class="features-area section_gap">
 		<div class="container">

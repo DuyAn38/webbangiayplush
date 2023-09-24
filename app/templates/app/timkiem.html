@@ -2,21 +2,21 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block timkiem %}
-    <h5 class="pt-3 text-center">Kết quả tìm kiếm: {{ search }}</h5>
+     <h5 class="pt-3 text-center">Kết quả tìm kiếm: {{ key }}</h5> 
+     
     <section class="featured spad">
         <div class="container">
             <div class="row featured__filter">
-                {% for product in keys %}
+                {% for product in product_rq %}
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{product.ImageURL}}">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#" data-product={{product.id}} data-action="add"  class="add-btn update-btn"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="{% url 'detail' %}?id={{ product.id }}">{{product.name}}</a></h6>
-                            <h5>{{product.price | floatformat}} VND</h5>
+                    <div class="single-product">
+                        <img class="img-fluid" src="{{ product.ImageURL }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="product-details">
+                            <h6 class="card-title"><a href="{% url 'chitiet' %}?id={{ product.id }}">{{ product.name }}</a></h6>
+                            <h5 class="card-text">{{ product.price|floatformat:0 }} VND</h5>
+                            <div class="prd-bottom">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

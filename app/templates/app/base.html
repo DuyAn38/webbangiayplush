@@ -123,8 +123,9 @@
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item">
+							<li class="nav-item d-flex">
 								<a href="{% url 'giohang' %}"><span class="ti-bag"></span></a>
+								<p style="margin-top:20px;"> {{count}}</p>
 							</li>
 								
 							<li class="nav-item">
@@ -212,10 +213,12 @@
 
 		<div class="search_input" id="search_input_box">
 			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search_input" placeholder="Tìm kiếm ở đây">
-					<button type="submit" class="btn"></button>
-					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+				<form method="POST" action="{% url 'timkiem' %}" class="d-flex justify-content-between">
+					{% csrf_token %}
+					 <input type="text" class="form-control" name="searched" placeholder="Tìm kiếm ở đây">
+					
+					
+					{% comment %} <span class="lnr lnr-cross" id="close_search" title="Close Search"></span> {% endcomment %}
 				</form>
 			</div>
 		</div> 
