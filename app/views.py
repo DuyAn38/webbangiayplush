@@ -8,6 +8,9 @@ from .python.app.base import *
 from .python.app.updateItem import updateItem
 from .python.app.timkiem import timkiem
 from .python.app.lienhe import lienhe
+from .python.app.baomat import baomat
+from .python.app.chinhsachgiaohang import chinhsachgiaohang
+from .python.app.doitra import doitra
 
 from .python.app.giohang import giohang
 from .python.app.muahang import muahang

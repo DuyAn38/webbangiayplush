@@ -5792,7 +5792,7 @@ label {
     color: #ffba00; }
 
 .login-background {
-  background-image: url('/static/images/backgr.jpg');
+  background-image: url('/static/images/jd4background.jpg');
 
   background-size: cover; /* Để hình ảnh nền tự điều chỉnh kích thước sao cho vừa với phần tử */
   background-repeat: no-repeat; /* Không lặp lại hình ảnh */

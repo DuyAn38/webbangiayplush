@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center" style="margin: 150px auto;">
             <div class="col-md-6">
-                <h1 style="text-align: center;">ĐĂNG KÝ</h1>
+                <h1 style="text-align: center;color: #ffefef">ĐĂNG KÝ</h1>
                 <form method="POST" action="">
                     {% csrf_token %}
                     <div class="form-group">
@@ -34,7 +34,7 @@
                         <p id="message">{{ message }}</p>
                     {% endfor %}
                     <br/>
-                    <p style="font-size: 25px;color: #212529; ">Bạn đã có tài khoản? <a href="{% url 'dangnhap' %}">Đăng nhập</a></p>
+                    <p style="font-size: 25px;color: #fb6800; ">Bạn đã có tài khoản? <a href="{% url 'dangnhap' %}">Đăng nhập</a></p>
                 </form>
             </div>
         </div>

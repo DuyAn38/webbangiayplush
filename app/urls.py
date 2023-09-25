@@ -10,6 +10,9 @@ urlpatterns = [
     path('blog/', views.blog  , name="blog"),
     path('lienhe/', views.lienhe  , name="lienhe"),
     path('updateItem/', views.updateItem  , name="updateItem"),
+    path('baomat/', views.baomat  , name="baomat"),
+    path('doitra/', views.doitra  , name="doitra"),
+    path('chinhsachgiaohang/', views.chinhsachgiaohang  , name="chinhsachgiaohang"),
 
     path('giohang/', views.giohang  , name="giohang"),
     path('muahang/', views.muahang  , name="muahang"),

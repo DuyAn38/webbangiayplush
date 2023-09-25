@@ -97,11 +97,11 @@
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Thương Hiệu</a>
-								 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<ul class="dropdown-menu">
 									{% for category in categories %}
-									<a class="dropdown-item" href="{% url 'hang' %}?category={{ category.slug }}">{{ category.name }}</a>
+									<li class="nav-item"> <a class="nav-link" href="{% url 'hang' %}?category={{ category.slug }}">{{ category.name }} </a></li>
 									{% endfor %}
-								</div>
+								</ul>
 							</li>
 
 
@@ -112,10 +112,10 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Chính sách và bảo hành</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="">Bảo mật</a></li>
-									<li class="nav-item"><a class="nav-link" href="">Vận chuyển</a></li>
-									<li class="nav-item"><a class="nav-link" href="">Đổi trả	</a></li>
-									<li class="nav-item"><a class="nav-link" href="">Thanh toán</a></li>
+									<li class="nav-item"><a class="nav-link" href="{% url 'baomat' %}">Chính sách bảo mật</a></li>
+									<li class="nav-item"><a class="nav-link" href="{% url 'chinhsachgiaohang' %}">Chính sách vận chuyển</a></li>
+									<li class="nav-item"><a class="nav-link" href="{% url 'doitra' %}">Chính sách đổi trả	</a></li>
+									
 								</ul>
 							</li>
 
@@ -247,7 +247,9 @@
 	{% block muahang %}{% endblock muahang %}
 	{% block hoadon %}{% endblock hoadon %}
 	{% block donhangcuatoi %}{% endblock donhangcuatoi %}
-
+	{% block baomat %}{% endblock baomat %}
+	{% block chinhsachgiaohang %}  {% endblock chinhsachgiaohang %}
+	{% block doitra %}  {% endblock doitra %}
 	<!-- start footer Area -->
 	<footer class="footer-area section_gap">
 		<div class="container">
@@ -256,12 +258,12 @@
 					<div class="single-footer-widget">
 						<h6>Về chúng tôi</h6>
 						<ul class="list-links">
-							<li><a href="#">Chính sách bảo mật</a></li>
-							<li><a href="#">Chính sách vận chuyển</a></li>
-							<li><a href="#">Chính sách đổi trả</a></li>
+							<li><a href="{% url 'baomat' %}">Chính sách bảo mật</a></li>
+							<li><a href="{% url 'chinhsachgiaohang' %}">Chính sách vận chuyển</a></li>
+							<li><a href="{% url 'doitra' %}">Chính sách đổi trả</a></li>
 							<li><a href="#">Hướng dẫn đặt hàng</a></li>
-							<li><a href="#">Thông tin thanh toán</a></li>
-							<li><a href="#">Thông tin liên hệ</a></li>
+							
+							<li><a href="{% url 'lienhe' %}">Thông tin liên hệ</a></li>
 						</ul>
 					</div>
 				</div>
